@@ -26,9 +26,9 @@ public class Alien {
         }
 
         //calculos
-        this.precioCuerpo = 0.2 * tamanio;
-        this.precioExtremidades = 0.1 * tamanio;
-        this.precioOjo = 0.05 * tamanio;
+        this.precioExtremidades = 0.1 * this.tamanio;
+        this.precioOjo = 0.05 * this.tamanio;
+        this.precioCuerpo = 0.2 * this.tamanio;
 
 
     }
@@ -75,7 +75,7 @@ public class Alien {
                 "\nPies: " + numeroPies +
                 "\nPrecio Extremidades: $" + precioExtremidades +
                 "\nPrecio Ojos: $" + precioOjo +
-                "\nPrecio Cuerpo: " + precioCuerpo;
+                "\nPrecio Cuerpo: $" + precioCuerpo;
 
         System.out.println(mensaje);
 
