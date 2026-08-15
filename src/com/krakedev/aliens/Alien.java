@@ -6,7 +6,7 @@ public class Alien {
     private String color;
     private int numeroOjos;
     private int numeroBrazos;
-    private int numeroPies;
+    private int numeroPiernas;
     private double precioExtremidades;
     private double precioOjo;
     private double precioCuerpo;
@@ -50,8 +50,8 @@ public class Alien {
         return numeroBrazos;
     }
 
-    public int getNumeroPies() {
-        return numeroPies;
+    public int getNumeroPiernas() {
+        return numeroPiernas;
     }
 
     public double getPrecioExtremidades() {
@@ -72,12 +72,35 @@ public class Alien {
                 "\nColor: " + color +
                 "\nOjos: " + numeroOjos +
                 "\nBrazos: " + numeroBrazos +
-                "\nPies: " + numeroPies +
+                "\nPiernas: " + numeroPiernas +
                 "\nPrecio Extremidades: $" + precioExtremidades +
                 "\nPrecio Ojos: $" + precioOjo +
                 "\nPrecio Cuerpo: $" + precioCuerpo;
 
         System.out.println(mensaje);
+    }
 
+    public boolean agregarBrazos (int numeroBrazos) {
+        int extremidades = numeroBrazos + this.numeroPiernas;
+        if (extremidades > 0 && extremidades <= 10) {
+            this.numeroBrazos = numeroBrazos;
+            return true;
+        } else {
+            System.out.println("El Alien puede tener un máxmo de 10 extremidades (brazos+piernas)");
+            this.numeroBrazos = 0;
+            return false;
+        }
+    }
+
+    public boolean agregarPiernas (int numeroPiernas) {
+        int extremidades = numeroPiernas + this.numeroBrazos;
+        if (extremidades > 0 && extremidades <= 10) {
+            this.numeroPiernas = numeroPiernas;
+            return true;
+        } else {
+            System.out.println("El Alien puede tener un máxmo de 10 extremidades (brazos+piernas)");
+            this.numeroPiernas = 0;
+            return false;
+        }
     }
 }
