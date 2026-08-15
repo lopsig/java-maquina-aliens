@@ -103,4 +103,37 @@ public class Alien {
             return false;
         }
     }
+
+    public boolean agregarOjos (int numeroOjos) {
+        if (this.tamanio >= 5 && this.tamanio <= 10) {
+            if (numeroOjos > 0 && numeroOjos <= 3) {
+                this.numeroOjos = numeroOjos;
+                return true;
+            } else {
+                System.out.println("Para este tamaño, el Alien solo puede máximo 3 ojos ");
+                this.numeroOjos = 0;
+                return false;
+            }
+        } else if (this.tamanio > 10 && this.tamanio <= 20) {
+            if (numeroOjos > 0 && numeroOjos <= 5) {
+                this.numeroOjos = numeroOjos;
+                return true;
+            } else {
+                System.out.println("Para este tamaño, el Alien solo puede máximo 5 ojos ");
+                this.numeroOjos = 0;
+                return false;
+            }
+        } else if (this.tamanio > 20 && this.tamanio <= 30) {
+            if (numeroOjos > 0 && numeroOjos <= 7) {
+                this.numeroOjos = numeroOjos;
+                return true;
+            } else {
+                System.out.println("Para este tamaño, el Alien solo puede máximo 7 ojos ");
+                this.numeroOjos = 0;
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }
